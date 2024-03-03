@@ -1,3 +1,4 @@
+import { Parser } from "html-to-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -22,7 +23,10 @@ const Article = () => {
   return (
     <div>
       <h1 className="text-4xl font-bold">{value.title}</h1>
-      <div>{value.articleText}</div>
+      <div>
+        {Parser().parse(value.articleText)}
+        
+        </div>
     </div>
   );
 };
